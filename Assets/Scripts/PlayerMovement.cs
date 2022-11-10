@@ -3,76 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Photon.Pun.MonoBehaviourPun
 {
-    
-    public float walkSpeed = 5f;
-    public float RunSpeed = 10f;
-    public float jumpHeight = 1.1f;
-    public float gravityScale = -20f;
-    public float rotationSensibility = 10f;
 
-    public Camera cameraPlayer;
 
-    public float cameraVerticalAngle;
-    Vector3 movement = Vector3.zero;
-    Vector3 cameraRotation = Vector3.zero;
-    CharacterController characterController;
-    // Start is called before the first frame update
-    void Start()
+    float yVelocity = 0f;
+    [Range(5f, 25f)]
+    public float gravity = 15f;
+    [Range(5f, 15f)]
+    public float movementSpeed = 10f;
+    [Range(5f, 15f)]
+    public float jumpSpeed = 10f;
+
+    Transform cameraTransform;
+    float pitch = 0f;
+    [Range(1f, 90f)]
+    public float maxPitch = 85f;
+    [Range(-1f, -90f)]
+    public float minPitch = -85f;
+    [Range(0.5f, 5f)]
+    public float mouseSensitivity = 2f;
+
+    CharacterController cc;
+
+    private void Start()
     {
-        
+        cc = GetComponent<CharacterController>();
+        cameraTransform = GetComponentInChildren<Camera>().transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Move();
         Look();
+        Move();
     }
 
-    private void Awake()
+    void Look()
     {
-        characterController = GetComponent<CharacterController>();
-
+        float xInput = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float yInput = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        transform.Rotate(0, xInput, 0);
+        pitch -= yInput;
+        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+        Quaternion rot = Quaternion.Euler(pitch, 0, 0);
+        cameraTransform.localRotation = rot;
     }
-    
-    private void Move()
+
+    void Move()
     {
-        if (characterController.isGrounded)
+        Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        input = Vector3.ClampMagnitude(input, 1f);
+        Vector3 move = transform.TransformVector(input) * movementSpeed;
+        if (cc.isGrounded)
         {
-            movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-            movement = Vector3.ClampMagnitude(movement, 1f);
-
-            if (Input.GetButtonDown("Sprint"))
-            {
-                movement = transform.TransformDirection(movement) * RunSpeed;
-            }else
-            {
-                movement = transform.TransformDirection(movement) * walkSpeed;
-            }
-            
-           
-
+            yVelocity = -gravity * Time.deltaTime;
             if (Input.GetButtonDown("Jump"))
             {
-                movement.y = Mathf.Sqrt(jumpHeight * -2f * gravityScale);
+                yVelocity = jumpSpeed;
             }
         }
-
-        movement.y += gravityScale * Time.deltaTime;
-        characterController.Move(movement * Time.deltaTime);
+        yVelocity -= gravity * Time.deltaTime;
+        move.y = yVelocity;
+        cc.Move(move * Time.deltaTime);
     }
 
-    private void Look()
-    {
-        cameraRotation.x = Input.GetAxis("Mouse X") * rotationSensibility * Time.deltaTime;
-        cameraRotation.y = Input.GetAxis("Mouse Y") * rotationSensibility * Time.deltaTime;
-
-        cameraVerticalAngle += cameraRotation.y;
-        cameraVerticalAngle = Mathf.Clamp(cameraVerticalAngle, -60, 60);
-
-        transform.Rotate(Vector3.up * cameraRotation.x);
-        cameraPlayer.transform.localRotation = Quaternion.Euler(-cameraVerticalAngle, 0f, 0f);
-    }
 }
