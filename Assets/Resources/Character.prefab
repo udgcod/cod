@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 114622173737801170}
   - component: {fileID: 114940653567523572}
   m_Layer: 0
-  m_Name: Character
+  m_Name: PhotonPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 114940653567523572}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

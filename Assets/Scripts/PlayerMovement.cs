@@ -8,6 +8,7 @@ public class PlayerMovement : Photon.Pun.MonoBehaviourPun
 
 
     float yVelocity = 0f;
+
     [Range(5f, 25f)]
     public float gravity = 15f;
     [Range(5f, 15f)]
