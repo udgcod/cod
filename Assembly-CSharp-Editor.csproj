@@ -698,18 +698,6 @@
       <Project>{5C700488-3D17-F904-699B-B72BD6739985}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{D400BB2F-DFE9-9877-55A8-AD3659629BF5}</Project>
-      <Name>PunDemos.DemoHubEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{25CF37F3-C403-ED81-2F10-26DA938C880A}</Project>
-      <Name>PunDemos.DemoSlotcarEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{95C66B35-D51F-CD36-E003-37579A8669FE}</Project>
-      <Name>PhotonUnityNetworking.Demos</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
       <Project>{FB86526A-FB5B-EA1F-1726-278D6324F6BC}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
