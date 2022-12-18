@@ -6,7 +6,10 @@ using Photon.Pun;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject cameraHolder;
+
     [SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, JumpForce, smoothTime;
+
+ 
 
     float verticalLookRotation;
     bool grounded;
@@ -36,6 +39,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!PV.IsMine)
             return;
+
+
         Look();
 
         Move();
@@ -48,12 +53,15 @@ public class PlayerController : MonoBehaviour
    
     void Look()
     {
+    
+       
         transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
 
         verticalLookRotation += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -60f, 30f);
 
         cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
+        
     }
 
     void Move()
