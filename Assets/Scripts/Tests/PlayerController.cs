@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, Damagable
     [SerializeField] GameObject UI;
     [SerializeField] Image DamageImage;
     private float r, g, b, a;
+    bool damaged;
+    bool potRecuperarse;
+    float tempsVida = 0f;
 
     //Aim
     public GameObject aimImage;
@@ -119,6 +122,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, Damagable
         if(Input.GetMouseButtonDown(0)){
             items[itemIndex].Use();
         }
+        if(!damaged & currentHealth < 100){
+            tempsVida += Time.deltaTime;
+            if(tempsVida > 2){
+                potRecuperarse = true;
+            }
+        }
+         if(potRecuperarse){
+            recuperarVida();
+          }
+        damaged = false;
     }
 
    
@@ -200,6 +213,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, Damagable
 
         Debug.Log("took damage " + damage);
         currentHealth -= damage;
+        potRecuperarse = false;
+        tempsVida = 0f;
 
         //Barra de vida
         healthbarImg.fillAmount = currentHealth/maxHealth;
@@ -218,4 +233,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, Damagable
         Color c = new Color(r,g,b,a);
         DamageImage.color = c;
     }
+    
+   private void recuperarVida(){
+
+        a-=0.1f;
+        tempsVida = 0f;
+        currentHealth += 10f;
+        healthbarImg.fillAmount = currentHealth/maxHealth;
+        potRecuperarse = false;
+
+    }
+
+
 }

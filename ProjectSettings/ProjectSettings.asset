@@ -286,7 +286,6 @@ PlayerSettings:
   - m_BuildTarget: WebGL
     m_StaticBatching: 0
     m_DynamicBatching: 0
-  m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: WindowsStandaloneSupport
     m_GraphicsJobs: 0
@@ -348,8 +347,6 @@ PlayerSettings:
     m_Devices:
     - Oculus
     - OpenVR
-  m_DefaultShaderChunkSizeInMB: 16
-  m_DefaultShaderChunkCount: 0
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
@@ -716,11 +713,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 4709de17-7dac-47aa-8b5a-3575a63bd924
+  cloudProjectId: 32850002-8cbf-4aa4-a31f-abb9d2a6eeaf
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: CodUDG (1)
-  organizationId: eloi-1073
+  organizationId: enxurrus
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

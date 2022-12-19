@@ -125,7 +125,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -180,55 +180,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2064}
     - Class: 114
-      Script: {instanceID: 2408}
+      Script: {instanceID: 2410}
     - Class: 114
-      Script: {instanceID: 2552}
+      Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 2912}
+      Script: {instanceID: 2914}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3066}
     - Class: 114
-      Script: {instanceID: 3248}
+      Script: {instanceID: 3242}
     - Class: 114
-      Script: {instanceID: 3318}
+      Script: {instanceID: 3252}
     - Class: 114
-      Script: {instanceID: 3542}
+      Script: {instanceID: 3324}
     - Class: 114
-      Script: {instanceID: 3664}
+      Script: {instanceID: 3548}
     - Class: 114
-      Script: {instanceID: 3844}
+      Script: {instanceID: 3670}
     - Class: 114
-      Script: {instanceID: 3854}
+      Script: {instanceID: 3850}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3860}
     - Class: 114
-      Script: {instanceID: 4008}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4272}
+      Script: {instanceID: 4014}
     - Class: 114
-      Script: {instanceID: 4398}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4438}
+      Script: {instanceID: 4404}
     - Class: 114
-      Script: {instanceID: 5328}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 5448}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 5550}
+      Script: {instanceID: 5456}
     - Class: 114
-      Script: {instanceID: 5570}
+      Script: {instanceID: 5558}
     - Class: 114
-      Script: {instanceID: 5990}
+      Script: {instanceID: 5578}
     - Class: 114
-      Script: {instanceID: 5992}
+      Script: {instanceID: 5688}
     - Class: 114
-      Script: {instanceID: 6208}
+      Script: {instanceID: 5998}
     - Class: 114
-      Script: {instanceID: 6546}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 22046}
+      Script: {instanceID: 6214}
     - Class: 114
-      Script: {instanceID: 71714}
+      Script: {instanceID: 6550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -464,6 +464,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: ee978c489f808f6c2a3a92109c0bb36d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SingleShootGun
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -856,6 +862,12 @@ ScriptsOnlyBuild:
     className: PlayerListItem
   - hash:
       serializedVersion: 2
+      Hash: 1a286079cf1647bc90669bb8cf035be6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemInfo
+  - hash:
+      serializedVersion: 2
       Hash: 7829e932aec962afd9bcfad28ffff27d
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -956,6 +968,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonRealtime.dll
     namespaceName: Photon.Realtime
     className: ConnectionHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 97ef6bf4e3bc4048120649a444e03eb5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunInfo
   - hash:
       serializedVersion: 2
       Hash: 3ba023cd67d72cace33969ab863e0fd4
@@ -1070,26 +1088,8 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: PhotonTeamsManager
-  - hash:
-      serializedVersion: 2
-      Hash: 1a286079cf1647bc90669bb8cf035be6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ItemInfo
-  - hash:
-      serializedVersion: 2
-      Hash: 97ef6bf4e3bc4048120649a444e03eb5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GunInfo
-  - hash:
-      serializedVersion: 2
-      Hash: ee978c489f808f6c2a3a92109c0bb36d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SingleShootGun
   platform: 19
   scenePathNames:
   - Assets/Scenes/TestScene.unity
   - Assets/Scenes/Map 1.unity
-  playerPath: C:/Users/eloia/Documents/cod/Builds/CodUDG.exe
+  playerPath: D:/UDG/3rt/MOTORS/BUILD_SHOOTER/CodUDG.exe
