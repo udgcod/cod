@@ -47,9 +47,12 @@
      <Compile Include="Assets\Scripts\Tests\PlayerListItem.cs" />
      <Compile Include="Assets\Scripts\Tests\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Tests\PlayerGroundCheck.cs" />
-     <Compile Include="Assets\Scripts\Guns\GestorArmes.cs" />
-     <Compile Include="Assets\Scripts\Guns\ArmaInfo.cs" />
-     <Compile Include="Assets\Scripts\Guns\Disparar.cs" />
+     <Compile Include="Assets\Scripts\Guns\ItemInfo.cs" />
+     <Compile Include="Assets\Scripts\Guns\GunInfo.cs" />
+     <Compile Include="Assets\Scripts\Guns\Item.cs" />
+     <Compile Include="Assets\Scripts\Guns\Gun.cs" />
+     <Compile Include="Assets\Scripts\Guns\SingleShootGun.cs" />
+     <Compile Include="Assets\Scripts\Guns\Damagable.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
      <None Include="Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
